@@ -1,7 +1,7 @@
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 import PropFirmCard from "@/components/ui/prop-firm-card";
-import TradingCommunityCard from "@/components/ui/trading-community-card";
+import FeatureCard from "@/components/ui/feature-card";
 
 interface FeaturesProps {
   className?: string;
@@ -11,19 +11,34 @@ export default function Features({ className = "" }: FeaturesProps) {
   return (
     <Section className={`bg-[#050505] ${className}`} id="features">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          <div className="md:row-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-[480px_600px] gap-8 items-center justify-center mx-auto">
+          <div className="md:row-span-2 flex justify-center">
             <PropFirmCard />
           </div>
 
-          {/* Top Right - Trading Community */}
-          <div>
-            <TradingCommunityCard />
-          </div>
+          <div className="flex flex-col gap-6 items-center">
+            <FeatureCard
+              title={
+                <>
+                  A focused trading{" "}
+                  <span className="text-primary">community</span>
+                </>
+              }
+              description="The AW Trades Discord is a free, learning-first environment for futures and prop firm traders."
+              imageSrc="/trading-pic-1.webp"
+              imageAlt="Trading Community"
+            />
 
-          {/* Bottom Right - Bloop Indicator */}
-          <div className="min-h-[280px] md:min-h-[240px] rounded-3xl bg-[#0d0d0d] border border-white/10">
-            {/* Placeholder for bloop card */}
+            <FeatureCard
+              title={
+                <>
+                  <span className="text-primary">Bloop</span> indicator
+                </>
+              }
+              description="Bloop is a futures trading indicator built to support structured decision-making rather than signal chasing."
+              imageSrc="/trading-pic-2.webp"
+              imageAlt="Bloop Indicator"
+            />
           </div>
         </div>
       </Container>

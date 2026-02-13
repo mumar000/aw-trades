@@ -4,9 +4,13 @@ interface SectionProps {
   id?: string;
 }
 
-export default function Section({ children, className = "", id }: SectionProps) {
+export default function Section({
+  children,
+  className = "",
+  id,
+}: SectionProps) {
   return (
-    <section id={id} className={`relative py-16 md:py-20 ${className}`}>
+    <section id={id} className={`relative py-4 md:py-8 ${className}`}>
       {children}
     </section>
   );

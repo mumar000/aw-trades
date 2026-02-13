@@ -14,12 +14,12 @@ export default function NavButton({
       href={href}
       className={`
         relative px-6 py-2 rounded-full text-lg transition-all duration-300
-        flex items-center justify-center min-w-[100px]
+        flex items-center justify-center min-w-[100px] backdrop-blur-2xl
         border-t-2
         ${
           isActive
             ? "bg-white/[0.12] border-white/10 text-white font-semibold "
-            : "bg-white/[0.03] border-white/40 text-white/95 hover:text-white hover:bg-white/[0.08] hover:border-white/20"
+            : "bg-white/[0.02] border-white/40 text-white/95 hover:text-white hover:bg-white/[0.08] hover:border-white/20"
         }
       `}
       style={{
