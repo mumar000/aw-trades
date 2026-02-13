@@ -1,6 +1,6 @@
 "use client";
 
-import { useIntroAnimation } from "@/hooks/useIntroAnimation";
+import { useIntroAnimation } from "@/hooks/use-intro-animation";
 
 interface HeroProps {
   onNavbarReady?: (visible: boolean) => void;
@@ -26,6 +26,14 @@ export default function Hero() {
       <div
         className={`absolute inset-0 bg-black/92 pointer-events-none z-0 transition-opacity duration-1000 ease-out
           ${animationState.overlayVisible ? "opacity-100" : "opacity-0"}`}
+      />
+
+      {/* Bottom Fade Gradient - Blends into Features section */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none z-[1]"
+        style={{
+          background: "linear-gradient(to bottom, transparent 0%, #050505 100%)",
+        }}
       />
 
       {/* Content */}

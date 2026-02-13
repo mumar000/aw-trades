@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import NavButton from "../ui/NavButton";
+import NavButton from "@/components/ui/nav-button";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },

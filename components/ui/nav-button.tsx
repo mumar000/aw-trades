@@ -23,13 +23,11 @@ export default function NavButton({
         }
       `}
       style={{
-        // This creates the "3D" depth that standard Tailwind borders can't do alone
         boxShadow: isActive
           ? "inset 0 1px 1px rgba(255,255,255,0.3), 0 4px 15px rgba(0,0,0,0.4)"
           : "inset 0 1px 0px rgba(255,255,255,0.1)",
       }}
     >
-      {/* Top Edge Light - This is the "secret sauce" for the glass look */}
       <span
         className={`
         absolute inset-x-0 top-0 h-[2px]

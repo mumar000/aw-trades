@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Navbar from "@/components/layout/Navbar";
-import Hero from "@/components/sections/Hero";
-import { useIntroAnimation } from "@/hooks/useIntroAnimation";
+import Navbar from "@/components/layout/navbar";
+import Hero from "@/components/sections/hero";
+import Features from "@/components/sections/features";
+import { useIntroAnimation } from "@/hooks/use-intro-animation";
 
 export default function Home() {
   const { animationState } = useIntroAnimation();
@@ -31,6 +32,7 @@ export default function Home() {
       <Navbar isVisible={animationState.navbarVisible} />
       <main className="relative z-10">
         <Hero />
+        <Features />
       </main>
     </div>
   );
