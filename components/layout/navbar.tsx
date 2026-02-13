@@ -46,12 +46,11 @@ export default function Navbar({ isVisible = true }: NavbarProps) {
         {/* CTA Button */}
         <a
           href="#deals"
-          className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-light
-            bg-gradient-to-b from-primary/80 via-primary/60 to-primary/40
-            text-white border border-primary/30
-            shadow-[0_4px_20px_rgba(254,197,198,0.25)]
-            hover:shadow-[0_4px_25px_rgba(254,197,198,0.35)]
-            transition-all duration-300"
+          className="inline-flex items-center gap-3 px-6 py-3 rounded-full
+                bg-gradient-to-b from-primary/60 via-primary/10 to-primary/05
+                text-white text-md font-medium
+                border border-primary/50 backdrop-blur-2xl
+                transition-all duration-300"
         >
           <span>View deals below</span>
           <svg

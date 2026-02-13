@@ -6,6 +6,7 @@ import {
   PROP_FIRM_TABLE_HEADERS,
   COMPARISONS_CONTENT,
 } from "@/lib/constants";
+import ShinyButton from "../ui/shinny-button";
 
 interface ComparisonsProps {
   className?: string;
@@ -127,19 +128,7 @@ export default function Comparisons({ className = "" }: ComparisonsProps) {
             </div>
 
             {/* CTA Button */}
-            <a
-              href={cta.href}
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full
-                bg-gradient-to-b from-primary/90 via-primary/70 to-primary/50
-                text-white text-sm font-medium
-                border border-primary/40
-                shadow-[0_4px_20px_rgba(254,197,198,0.3)]
-                hover:shadow-[0_4px_30px_rgba(254,197,198,0.4)]
-                transition-all duration-300"
-              aria-label="View prop firm comparisons"
-            >
-              <span>{cta.text}</span>
-            </a>
+            <ShinyButton title={cta.text} href={cta.href} />
           </div>
         </div>
       </Container>

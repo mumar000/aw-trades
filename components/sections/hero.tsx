@@ -32,7 +32,8 @@ export default function Hero() {
       <div
         className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none z-[1]"
         style={{
-          background: "linear-gradient(to bottom, transparent 0%, #050505 100%)",
+          background:
+            "linear-gradient(to bottom, transparent 0%, #050505 100%)",
         }}
       />
 
@@ -44,9 +45,11 @@ export default function Hero() {
           className={`inline-flex items-center gap-2 px-6 py-1 mb-4 rounded-full text-lg
             text-white/90 border border-white
             transition-all duration-700 ease-out
-            ${animationState.badgeVisible
-              ? "opacity-100 scale-100 translate-y-0"
-              : "opacity-0 scale-95 translate-y-4"}`}
+            ${
+              animationState.badgeVisible
+                ? "opacity-100 scale-100 translate-y-0"
+                : "opacity-0 scale-95 translate-y-4"
+            }`}
         >
           <span>180,000+ in Payouts Secured</span>
           <svg
@@ -68,9 +71,11 @@ export default function Hero() {
         <h1
           className={`text-5xl md:text-6xl lg:text-8xl font-medium tracking-tight leading-none mb-0
             transition-all duration-700 ease-out
-            ${animationState.headlineVisible
-              ? "opacity-100 scale-100 translate-y-0"
-              : "opacity-0 scale-95 translate-y-4"}`}
+            ${
+              animationState.headlineVisible
+                ? "opacity-100 scale-100 translate-y-0"
+                : "opacity-0 scale-95 translate-y-4"
+            }`}
         >
           <span className="text-white">A Disciplined Approach</span>
           <br />
@@ -82,9 +87,11 @@ export default function Hero() {
         <p
           className={`text-lg md:text-xl text-white max-w-2xl py-8 leading-relaxed
             transition-all duration-700 ease-out
-            ${animationState.subheadlineVisible
-              ? "opacity-100 scale-100 translate-y-0"
-              : "opacity-0 scale-95 translate-y-4"}`}
+            ${
+              animationState.subheadlineVisible
+                ? "opacity-100 scale-100 translate-y-0"
+                : "opacity-0 scale-95 translate-y-4"
+            }`}
         >
           AW Trades is a futures trading brand built around structure, process,
           and repeatable execution.
@@ -94,22 +101,21 @@ export default function Hero() {
         <div
           className={`flex flex-col sm:flex-row items-center gap-4
             transition-all duration-700 ease-out
-            ${animationState.buttonsVisible
-              ? "opacity-100 scale-100 translate-y-0"
-              : "opacity-0 scale-95 translate-y-4"}`}
+            ${
+              animationState.buttonsVisible
+                ? "opacity-100 scale-100 translate-y-0"
+                : "opacity-0 scale-95 translate-y-4"
+            }`}
         >
           {/* Primary CTA */}
           <a
             href="#bloop-algo"
-            className="relative inline-flex items-center gap-2 px-8 py-3 rounded-full text-sm font-light
-              bg-gradient-to-b from-primary/90 via-primary/70 to-primary/50
-              text-white
-              shadow-[0_4px_20px_rgba(254,197,198,0.3)]
-              border border-primary/40
-              hover:shadow-[0_4px_30px_rgba(254,197,198,0.4)]
-              transition-all duration-300"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-full
+                bg-gradient-to-b from-primary/80 via-primary/15 to-primary/05
+                text-white text-md font-medium
+                border border-primary/50 backdrop-blur-2xl
+                transition-all duration-300"
           >
-            <span className="absolute inset-0 rounded-full bg-gradient-to-b from-white/25 to-transparent pointer-events-none" />
             <span className="relative z-10">Get Bloop Algo</span>
             <svg
               className="relative z-10 w-4 h-4"
@@ -129,21 +135,11 @@ export default function Hero() {
           {/* Secondary CTA */}
           <a
             href="#compare"
-            className="relative inline-flex items-center gap-2 px-8 py-3 rounded-full text-sm font-light
-              text-white/90
-              border border-white/20
-              backdrop-blur-2xl
-              bg-gradient-to-b from-white/10 via-white/5 to-white/[0.02]
-              hover:from-white/15 hover:via-white/8 hover:to-white/[0.03]
-              transition-all duration-300"
-            style={{
-              boxShadow: `
-                0 8px 32px rgba(0,0,0,0.5),
-                0 0 60px rgba(255,255,255,0.03),
-                inset 0 1px 1px rgba(255,255,255,0.15),
-                inset 0 -1px 1px rgba(0,0,0,0.2)
-              `,
-            }}
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-full
+                bg-gradient-to-b from-primary/40 via-primary/10 to-primary/05
+                text-white text-md font-medium
+                border border-primary/50
+                transition-all duration-300"
           >
             <span>Compare Prop Firms</span>
             <svg
