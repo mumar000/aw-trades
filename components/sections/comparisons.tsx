@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
@@ -7,6 +9,7 @@ import {
   COMPARISONS_CONTENT,
 } from "@/lib/constants";
 import ShinyButton from "../ui/shinny-button";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 interface ComparisonsProps {
   className?: string;
@@ -89,6 +92,8 @@ function FirmTable() {
 
 export default function Comparisons({ className = "" }: ComparisonsProps) {
   const { title, description, cta } = COMPARISONS_CONTENT;
+  const { isVisible: imageVisible, elementRef: imageRef } = useScrollReveal({ threshold: 0.2 });
+  const { isVisible: contentVisible, elementRef: contentRef } = useScrollReveal({ threshold: 0.2 });
 
   return (
     <Section
@@ -97,8 +102,15 @@ export default function Comparisons({ className = "" }: ComparisonsProps) {
     >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Side - Table */}
-          <div className="flex justify-center lg:justify-start  ">
+          {/* Left Side - Image */}
+          <div
+            ref={imageRef}
+            className={`flex justify-center lg:justify-start transition-all duration-700 ease-out ${
+              imageVisible
+                ? "opacity-100 blur-0 scale-100 -translate-x-0"
+                : "opacity-0 blur-md scale-95 -translate-x-20"
+            }`}
+          >
             <Image
               src="/comparision.webp"
               alt="comparision"
@@ -110,7 +122,14 @@ export default function Comparisons({ className = "" }: ComparisonsProps) {
           </div>
 
           {/* Right Side - Content */}
-          <div className="max-w-6xl">
+          <div
+            ref={contentRef}
+            className={`max-w-6xl transition-all duration-700 ease-out delay-150 ${
+              contentVisible
+                ? "opacity-100 blur-0 scale-100 translate-x-0"
+                : "opacity-0 blur-md scale-95 translate-x-20"
+            }`}
+          >
             <h2 className="text-[36px] md:text-[42px] leading-[1.1] font-medium tracking-tight text-white mb-8">
               <span className="text-primary">{title.highlight}</span>
               <br />

@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import { AlertTriangle } from "lucide-react";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 // Assuming these match your reference image text
 const DISCLOSURE_ITEMS = [
@@ -28,11 +31,20 @@ const DISCLOSURE_ITEMS = [
 ];
 
 export default function Disclaimer() {
+  const { isVisible, elementRef } = useScrollReveal({ threshold: 0.2 });
+
   return (
     <Section id="disclaimer" className="bg-[#050505] pt-0 pb-32">
       <Container>
         {/* Main Card Wrapper with the thin glowing border */}
-        <div className="relative w-full rounded-[40px] p-[1px] overflow-hidden">
+        <div
+          ref={elementRef}
+          className={`relative w-full rounded-[40px] p-[1px] overflow-hidden transition-all duration-700 ease-out ${
+            isVisible
+              ? "opacity-100 blur-0 scale-100 translate-y-0"
+              : "opacity-0 blur-md scale-95 translate-y-10"
+          }`}
+        >
           {/* ASYMMETRIC BORDER: High-end look with glow concentrated on the top-left */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#fec5c6] via-white/5 to-transparent z-0" />
 

@@ -23,7 +23,7 @@ const PropFirmCard = ({ direction = "left", delay = 0 }: PropFirmCardProps) => {
     <div
       ref={elementRef}
       className={`relative w-full h-full min-h-[400px] rounded-[48px] p-[1.5px] overflow-hidden group mx-auto max-w-[480px]
-        transition-all duration-1000 ease-out
+        transition-all duration-700 ease-out
         ${getTransform()}
         ${isVisible ? "opacity-100 blur-0 scale-100" : "opacity-0 blur-md scale-95"}`}
       style={{ transitionDelay: `${delay}ms` }}

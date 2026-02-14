@@ -1,14 +1,27 @@
+"use client";
+
 import Image from "next/image";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export default function Community() {
+  const { isVisible: textVisible, elementRef: textRef } = useScrollReveal({ threshold: 0.2 });
+  const { isVisible: imageVisible, elementRef: imageRef } = useScrollReveal({ threshold: 0.2 });
+
   return (
     <Section className="bg-[#050505]" id="community">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Typography */}
-          <div className="max-w-4xl">
+          <div
+            ref={textRef}
+            className={`max-w-4xl transition-all duration-700 ease-out ${
+              textVisible
+                ? "opacity-100 blur-0 scale-100 translate-x-0"
+                : "opacity-0 blur-md scale-95 -translate-x-20"
+            }`}
+          >
             <h2 className="text-[42px] md:text-[42px] leading-[1.1] font-medium tracking-tight text-white mb-8">
               A focused trading <span className="text-primary">community</span>
             </h2>
@@ -42,7 +55,14 @@ export default function Community() {
           </div>
 
           {/* Right Side - Image */}
-          <div className="relative flex justify-center lg:justify-end">
+          <div
+            ref={imageRef}
+            className={`relative flex justify-center lg:justify-end transition-all duration-700 ease-out delay-150 ${
+              imageVisible
+                ? "opacity-100 blur-0 scale-100 translate-x-0"
+                : "opacity-0 blur-md scale-95 translate-x-20"
+            }`}
+          >
             <div className="relative w-full max-w-[1000px] h-[700px]">
               {/* Grayscale image */}
               <Image

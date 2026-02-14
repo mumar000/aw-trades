@@ -1,15 +1,26 @@
+"use client";
+
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 import { Twitter, MessageCircle, Mail } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { isVisible, elementRef } = useScrollReveal({ threshold: 0.2 });
 
   return (
     <Section className="bg-[#050505] pt-0 pb-12">
       <Container className="container mx-auto">
         {/* Card-style footer */}
-        <div className="relative w-full rounded-[40px] p-[1px] overflow-hidden">
+        <div
+          ref={elementRef}
+          className={`relative w-full rounded-[40px] p-[1px] overflow-hidden transition-all duration-700 ease-out ${
+            isVisible
+              ? "opacity-100 blur-0 scale-100 translate-y-0"
+              : "opacity-0 blur-md scale-95 translate-y-10"
+          }`}
+        >
           {/* Gradient border */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#fec5c6]/40 via-white/5 to-transparent" />
 
