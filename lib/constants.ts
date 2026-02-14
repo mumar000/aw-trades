@@ -63,3 +63,26 @@ export const COMPARISONS_CONTENT = {
     href: "/comparisons",
   },
 } as const;
+
+export const DISCLOSURE_ITEMS = [
+  {
+    title: "Risk Disclaimer",
+    content:
+      "Trading carries significant risk and is not suitable for everyone. You may lose part or all of your capital. Do not trade with money you cannot afford to lose. Always assess your financial situation, experience, and risk tolerance before trading.",
+  },
+  {
+    title: "Not Financial Advice",
+    content:
+      "AW Trades is not a registered investment advisor, broker-dealer, or financial advisor. Nothing on this website is financial, investment, tax, or legal advice. All content is for educational and informational purposes only. Past performance does not guarantee future results.",
+  },
+  {
+    title: "Affiliate Disclosure",
+    content:
+      "AW Trades may earn commissions from certain links or partner offers. We may receive different commission rates from different partners, which can influence how providers are featured. This does not increase the price you pay.",
+  },
+  {
+    title: "No Warranties",
+    content:
+      'All information is provided "as is" without warranties of any kind. We do not guarantee accuracy, completeness, or timeliness. Third-party terms, pricing, and offers may change without notice.',
+  },
+] as const;

@@ -91,7 +91,10 @@ export default function Comparisons({ className = "" }: ComparisonsProps) {
   const { title, description, cta } = COMPARISONS_CONTENT;
 
   return (
-    <Section className={`bg-[#050505] ${className}`} id="comparisons">
+    <Section
+      className={`bg-[#050505] relative overflow-hidden pb-0 ${className}`}
+      id="comparisons"
+    >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Side - Table */}
@@ -128,7 +131,22 @@ export default function Comparisons({ className = "" }: ComparisonsProps) {
             </div>
 
             {/* CTA Button */}
-            <ShinyButton title={cta.text} href={cta.href} />
+            <button
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full
+    bg-gradient-to-b from-primary/80 via-primary/10 to-primary/05
+    text-white text-md font-medium
+    border border-primary/40
+    transition-all duration-300
+    /* Added Hover Styling */
+    hover:scale-[1.02] 
+    hover:border-primary/70 
+    hover:brightness-110 
+    hover:shadow-[0_0_20px_rgba(var(--primary-rgb),0.3)]
+    active:scale-95 cursor-pointer"
+            >
+              <span>Comparisions</span>
+              {/* Discord Icon */}
+            </button>
           </div>
         </div>
       </Container>
