@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import NavButton from "@/components/ui/nav-button";
 
 const NAV_ITEMS = [
@@ -10,17 +11,18 @@ const NAV_ITEMS = [
   { label: "Submit Proof", href: "/submit-proof" },
 ];
 
-interface NavbarProps {
-  isVisible?: boolean;
-}
+export default function Navbar() {
+  const pathname = usePathname();
+  const [activeIndex, setActiveIndex] = useState(0);
 
-export default function Navbar({ isVisible = true }: NavbarProps) {
-  const [activeIndex, setActiveIndex] = useState(1);
+  useEffect(() => {
+    const currentIndex = NAV_ITEMS.findIndex((item) => item.href === pathname);
+    setActiveIndex(currentIndex !== -1 ? currentIndex : 0);
+  }, [pathname]);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-700 ease-out
-        ${isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-4"}`}
+      className="fixed top-0 left-0 right-0 z-50 bg-transparent"
     >
       <nav className="flex items-center justify-between px-10 py-6 max-w-7xl mx-auto">
         {/* Logo */}

@@ -1,14 +1,6 @@
 "use client";
 
-import { useIntroAnimation } from "@/hooks/use-intro-animation";
-
-interface HeroProps {
-  onNavbarReady?: (visible: boolean) => void;
-}
-
 export default function Hero() {
-  const { animationState } = useIntroAnimation();
-
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-20 overflow-hidden">
       {/* Background Video */}
@@ -22,10 +14,9 @@ export default function Hero() {
         <source src="/fintech.mp4" type="video/mp4" />
       </video>
 
-      {/* Black Overlay - Animated */}
+      {/* Black Overlay */}
       <div
-        className={`absolute inset-0 bg-black/92 pointer-events-none z-0 transition-opacity duration-1000 ease-out
-          ${animationState.overlayVisible ? "opacity-100" : "opacity-0"}`}
+        className="absolute inset-0 bg-black/92 pointer-events-none z-0"
       />
 
       {/* Bottom Fade Gradient - Blends into Features section */}
@@ -39,17 +30,11 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-6xl mx-auto">
-        {/* Top Badge - Animated */}
+        {/* Top Badge */}
         <a
           href="#payouts"
-          className={`inline-flex items-center gap-2 px-6 py-1 mb-4 rounded-full text-lg
-            text-white/90 border border-white
-            transition-all duration-700 ease-out
-            ${
-              animationState.badgeVisible
-                ? "opacity-100 scale-100 translate-y-0"
-                : "opacity-0 scale-95 translate-y-4"
-            }`}
+          className="inline-flex items-center gap-2 px-6 py-1 mb-4 rounded-full text-lg
+            text-white/90 border border-white"
         >
           <span>180,000+ in Payouts Secured</span>
           <svg
@@ -67,15 +52,9 @@ export default function Hero() {
           </svg>
         </a>
 
-        {/* Main Headline - Animated */}
+        {/* Main Headline */}
         <h1
-          className={`text-5xl md:text-6xl lg:text-8xl font-medium tracking-tight leading-none mb-0
-            transition-all duration-700 ease-out
-            ${
-              animationState.headlineVisible
-                ? "opacity-100 scale-100 translate-y-0"
-                : "opacity-0 scale-95 translate-y-4"
-            }`}
+          className="text-5xl md:text-6xl lg:text-8xl font-medium tracking-tight leading-none mb-0"
         >
           <span className="text-white">A Disciplined Approach</span>
           <br />
@@ -83,29 +62,17 @@ export default function Hero() {
           <span className="text-primary">Futures Trading</span>
         </h1>
 
-        {/* Subheadline - Animated */}
+        {/* Subheadline */}
         <p
-          className={`text-lg md:text-xl text-white max-w-2xl py-8 leading-relaxed
-            transition-all duration-700 ease-out
-            ${
-              animationState.subheadlineVisible
-                ? "opacity-100 scale-100 translate-y-0"
-                : "opacity-0 scale-95 translate-y-4"
-            }`}
+          className="text-lg md:text-xl text-white max-w-2xl py-8 leading-relaxed"
         >
           AW Trades is a futures trading brand built around structure, process,
           and repeatable execution.
         </p>
 
-        {/* CTA Buttons - Animated */}
+        {/* CTA Buttons */}
         <div
-          className={`flex flex-col sm:flex-row items-center gap-4
-            transition-all duration-700 ease-out
-            ${
-              animationState.buttonsVisible
-                ? "opacity-100 scale-100 translate-y-0"
-                : "opacity-0 scale-95 translate-y-4"
-            }`}
+          className="flex flex-col sm:flex-row items-center gap-4"
         >
           {/* Primary CTA */}
           <a
