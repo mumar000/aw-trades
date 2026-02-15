@@ -1,11 +1,9 @@
-"use client";
-
-import Hero from "@/components/sections/home/hero";
-import Features from "@/components/sections/home/features";
-import Community from "@/components/sections/home/community";
-import Comparisons from "@/components/sections/home/comparisons";
-import CTA from "@/components/sections/home/cta";
-import Disclaimer from "@/components/sections/home/disclaimer";
+import Hero from "@/sections/home/hero";
+import Features from "@/components/sections/features";
+import Community from "@/components/sections/community";
+import Comparisons from "@/components/sections/comparisons";
+import CTA from "@/components/sections/cta";
+import Disclaimer from "@/components/sections/disclaimer";
 
 export default function Homepage() {
   return (

@@ -21,9 +21,7 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 bg-transparent"
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <nav className="flex items-center justify-between px-10 py-6 max-w-7xl mx-auto">
         {/* Logo */}
         <a href="/" className="text-3xl font-medium tracking-tight">

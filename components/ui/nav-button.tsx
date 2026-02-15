@@ -2,6 +2,7 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface NavButtonProps {
   children: React.ReactNode;
@@ -15,7 +16,7 @@ export default function NavButton({
   href = "#",
 }: NavButtonProps) {
   return (
-    <a
+    <Link
       href={href}
       className={cn(
         "relative flex items-center justify-center min-w-[120px] px-6 py-2.5  text-white text-md cursor-pointer transition-all rounded-full duration-500 ease-out",
@@ -50,6 +51,6 @@ export default function NavButton({
       <span className="relative z-10 text-sm tracking-tight font-medium">
         {children}
       </span>
-    </a>
+    </Link>
   );
 }
