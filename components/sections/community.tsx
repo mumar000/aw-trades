@@ -6,8 +6,12 @@ import Section from "@/components/ui/section";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export default function Community() {
-  const { isVisible: textVisible, elementRef: textRef } = useScrollReveal({ threshold: 0.2 });
-  const { isVisible: imageVisible, elementRef: imageRef } = useScrollReveal({ threshold: 0.2 });
+  const { isVisible: textVisible, elementRef: textRef } = useScrollReveal({
+    threshold: 0.2,
+  });
+  const { isVisible: imageVisible, elementRef: imageRef } = useScrollReveal({
+    threshold: 0.2,
+  });
 
   return (
     <Section className="bg-[#050505]" id="community">
@@ -71,11 +75,6 @@ export default function Community() {
                 fill
                 className="object-contain object-right grayscale"
                 priority
-              />
-              {/* Primary color overlay */}
-              <div
-                className="absolute inset-0 mix-blend-overlay pointer-events-none"
-                style={{ backgroundColor: "rgba(254, 197, 198, 0.3)" }}
               />
             </div>
           </div>
